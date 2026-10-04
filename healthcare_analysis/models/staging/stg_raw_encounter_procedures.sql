@@ -2,6 +2,6 @@ WITH source AS(SELECT * FROM `healthcare-analytics-510014.Raw.raw_encounter_proc
 SELECT encounter_procedure_id,
 encounter_id,
 procedure_id,
-quantity,
+quantity AS times_performed,
 performed_date
 FROM source
