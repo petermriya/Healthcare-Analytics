@@ -1,0 +1,70 @@
+version: 2 
+
+models:
+  - name: stg_raw_claims
+    columns:
+      - name: claim_id
+        tests:
+          - unique
+          - not_null
+      - name: claim_status
+        tests: 
+          - accepted_values:
+              values: ['Pending', 'Denied', 'Paid']
+  - name: stg_raw_departments
+    columns:
+      - name: department_id
+        tests: 
+          - unique
+          - not_null 
+      - name: department_name
+        tests:
+          - accepted_values: 
+              values: ['Cardiology', 'Pediatrics', 'Emergency', 'Radiology', 'Internal Medicine', 'Orthopedics']
+  - name: stg_raw_diagnosis_codes
+    columns:
+      - name: diagnosis_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_raw_encounter_diagnoses
+    columns:
+      - name: encounter_diagnosis_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_raw_encounter_procedures
+    columns: 
+      - name: encounter_procedure_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_raw_patients
+    columns:
+      - name: patient_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_raw_providers
+    columns: 
+      - name: provider_id
+        tests:
+          - unique
+          - not_null 
+  - name: stg_raw_payers
+    columns:
+      - name: payer_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_raw_procedures
+    columns:
+     - name: procedure_id
+       tests:
+        - unique
+        - not_null
+
+
+
+    
+
